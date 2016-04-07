@@ -24,12 +24,26 @@
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
-header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
-header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
+$sql = array();
 
-header('Cache-Control: no-store, no-cache, must-revalidate');
-header('Cache-Control: post-check=0, pre-check=0', false);
-header('Pragma: no-cache');
+$sql[] = 'CREATE TABLE IF NOT EXISTS `'._DB_PREFIX_.'module_quotes` (
+    `id_quote` int(11) NOT NULL AUTO_INCREMENT,
+    `bqreference` varchar(255) NOT NULL,
+    `id_customer` int(11) NOT NULL,
+    `id_cart` int(11) NOT NULL,
+    `bqemail` varchar(255) NOT NULL,
+    `job_specified` tinyint(1) NOT NULL,
+    `estimated_order_date` datetime NOT NULL,
+    `estimated_delivery_date` datetime NOT NULL,
+    `order_probability` int(2) NOT NULL,
+    `bq_cart` longtext NOT NULL,
+    `date_add` datetime NOT NULL,
+    `date_upd` datetime NOT NULL,
+    PRIMARY KEY  (`id_quote`)
+) ENGINE='._MYSQL_ENGINE_.' DEFAULT CHARSET=utf8;';
 
-header('Location: ../');
-exit;
+foreach ($sql as $query) {
+    if (Db::getInstance()->execute($query) == false) {
+        return false;
+    }
+}

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <module>
-	<name>blockviewed</name>
-	<displayName><![CDATA[Viewed products block]]></displayName>
-	<version><![CDATA[1.2.3]]></version>
-	<description><![CDATA[Adds a block displaying recently viewed products.]]></description>
-	<author><![CDATA[PrestaShop]]></author>
-	<tab><![CDATA[front_office_features]]></tab>
+	<name>businessquotation</name>
+	<displayName><![CDATA[Business Quotation]]></displayName>
+	<version><![CDATA[1.0.0]]></version>
+	<description><![CDATA[Create product price quotes for products that are sold by quote only.]]></description>
+	<author><![CDATA[ProfSolution]]></author>
+	<tab><![CDATA[payments_gateways]]></tab>
 	<is_configurable>1</is_configurable>
-	<need_instance>0</need_instance>
-	<limited_countries></limited_countries>
+	<need_instance>1</need_instance>
+	<limited_countries>FR</limited_countries>
 </module>
