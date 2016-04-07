@@ -24,8 +24,8 @@
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
-if (!defined('_PS_VERSION_'))
-	exit;
+/*if (!defined('_PS_VERSION_'))
+	exit;*/
 
 class BlockViewed extends Module
 {
